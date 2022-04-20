@@ -1,0 +1,31 @@
+@model Product
+
+@{
+    ViewData["Title"] = "New Product";
+}
+
+<div class="col-sm-6">
+    <h1 class="text-center">New Product</h1>
+    <div class="card">
+        <div class="card-body">
+            <form class="rounded p-3" asp-controller="Product" asp-action="Create">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                    <input asp-for="Name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                    <textarea rows="10" asp-for="Description" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price"></label>
+                    <span class="text-danger" asp-validation-for="Price"></span>
+                    <input asp-for="Price" class="form-control"></textarea>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-sm btn-outline-primary">
+            </form>
+        </div>
+    </div>
+</div>

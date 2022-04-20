@@ -1,0 +1,26 @@
+@model ProductCategoryAssociation
+
+@{
+    ViewData["Title"] = "Add Category";
+}
+
+<div class="col-sm-6">
+    <h1 class="text-center">Add Category</h1>
+    <div class="card">
+        <div class="card-body">
+            <form class="rounded p-3" asp-controller="Product" asp-action="AddCategory">
+                <div class="form-group">
+                    <label asp-for="CategoryId"></label>
+                    <span class="text-danger" asp-validation-for="CategoryId"></span>
+                    <select asp-for="CategoryId" class="form-control">
+                        @foreach(Category category in ViewBag.NonAssociatedCategories)
+                        {
+                            <option value="@category.CategoryId">@category.Name</option>
+                        }
+                    </select>
+                </div>
+                <input type="submit" value="Add" class="btn btn-sm btn-outline-primary">
+            </form>
+        </div>
+    </div>
+</div>

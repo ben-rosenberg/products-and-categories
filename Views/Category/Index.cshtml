@@ -1,0 +1,12 @@
+@model List<Category>
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="row">
+    @{
+        Category emptyCategory = new Category();
+    }
+    <partial name="_New" model="@emptyCategory"></partial>
+    <partial name="_All"></partial>
+</div>

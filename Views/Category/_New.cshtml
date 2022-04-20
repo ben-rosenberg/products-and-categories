@@ -1,0 +1,21 @@
+@model Category
+
+@{
+    ViewData["Title"] = "New Category";
+}
+
+<div class="col-sm-6">
+    <h1 class="text-center">New Category</h1>
+    <div class="card">
+        <div class="card-body">
+            <form class="rounded p-3" asp-controller="Category" asp-action="Create">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                    <input asp-for="Name" class="form-control">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-sm btn-outline-primary">
+            </form>
+        </div>
+    </div>
+</div>

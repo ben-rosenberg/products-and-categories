@@ -1,0 +1,13 @@
+@model List<Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="row">
+    @{
+        Product emptyProduct = new Product();
+    }
+    <partial name="_New" model="@emptyProduct"></partial>
+    <partial name="_All"></partial>
+</div>

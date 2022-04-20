@@ -1,0 +1,23 @@
+@model Product
+
+@{
+    ViewData["Title"] = "Current Categories";
+}
+
+<div class="col-sm-6">
+    <h1 class="text-center">Categories</h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="list-group">
+                @foreach(ProductCategoryAssociation association in Model.ProductsCategoryAssociations) {
+                    <a
+                        asp-controller="Category"
+                        asp-action="Details"
+                        asp-route-categoryId="@association.CategoryId"
+                        class="list-group-item list-group-item-action"
+                    >@association.AssociatedCategory.Name</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+@model Product
+
+@{
+    ViewData["Title"] = @Model.Name;
+}
+
+<h1 class="text-center">@Model.Name</h1>
+<div class="row">
+    @{
+        ProductCategoryAssociation emptyAssociation = new ProductCategoryAssociation();
+    }
+    <partial name="_CurrentCategories"></partial>
+    <partial name="_AddCategory" model="@emptyAssociation"></partial>
+</div>
